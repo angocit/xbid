@@ -1,37 +1,37 @@
 import mongoose from "mongoose";
 const ProductSchema = mongoose.Schema({
     name:{
-        Type: String,
+        type: String,
         required:true
     },
     shortdescription: String,
     description:String,
     category:{
-        Type: mongoose.Schema.Types.ObjectId,
+        type: mongoose.Schema.Types.ObjectId,
         ref: 'categorys',
         required:true
     },
     thumbnail: {
-        Type:String,
+        type:String,
         required:true
     },
     images: [{
-        Type:String
+        type:String
     }],
     start_price: {
-        Type:Number,
+        type:Number,
         required:true
     },
     start_time:{
-        Type: Date,
+        type: Date,
         required:true
     },
     end_time:{
-        Type: Date,
+        type: Date,
         required:true
     },
     step:{
-        Type:Number,
+        type:Number,
         required:true
     }
 },
@@ -42,7 +42,7 @@ const ProductSchema = mongoose.Schema({
 export const Product = mongoose.model('products',ProductSchema)
 const categorySchema = mongoose.Schema({
     name: {
-        Type: String,
+        type: String,
         required:true
     }
 },
@@ -50,4 +50,4 @@ const categorySchema = mongoose.Schema({
     timestamps:true
 }
 )
-export const Cateogry = mongoose.model('categorys',categorySchema)
+export const Category = mongoose.model('categorys',categorySchema)
