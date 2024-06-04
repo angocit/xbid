@@ -1,9 +1,11 @@
 import express from 'express'
 import productRouter from './router/product.js'
+import uploadRouter from './router/upload.js'
 import mongoose from 'mongoose'
 const app = express()
 app.use(express.json())
 app.use('',productRouter)
+app.use('/files',uploadRouter)
 const port = 8000
 const connectdb = async ()=>{
     try {
